@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../css/todo.css"
+      th:href="@{/css/todo.css}"
+    />
+    <style>
+      .field-error {
+        text-align: left;
+        font-size: 14px;
+        border-color: #dc3545;
+        color: #dc3545;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- 투두 등록하러 가기  -->
+      <div class="add__todo">
+        <button>
+          <a href="../todo/addTodo.html" th:href="@{/todolist/add}">할일 등록하기</a>
+        </button>
+      </div>
+
+      <!-- 카테고리 이름 -->
+      <form
+        action=""
+        class="todo__category__form"
+        method="post"
+        th:action="@{/category/add}"
+        th:object="${categoryForm}"
+      >
+        <input
+          type="text"
+          placeholder="카테고리 입력..."
+          id="name"
+          th:field="*{categoryName}"
+        />
+        <div class="field-error" th:errors="*{categoryName}"></div>
+        <button type="submit">Add</button>
+      </form>
+    </div>
+    <!-- todo -->
+    <div class="todo__container">
+      <div class="todo__container__sub">
+        <p>Check Box</p>
+        <p>Title</p>
+        <p>Description</p>
+        <p>deadline</p>
+      </div>
+      <div class="todo__container__sub">
+        <p>Check Box</p>
+        <p>Title</p>
+        <p>Description</p>
+        <p>deadline</p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,380 @@
+[2022-01-18 22:21:10:778][restartedMain] INFO  y.todolist.TodolistApplication - Starting TodolistApplication using Java 11.0.12 on gim-yeongyuui-MacBookPro.local with PID 39941 (/Users/yeonkyu/Desktop/Projects/Spring/00.todolist/todolist/build/classes/java/main started by yeonkyu in /Users/yeonkyu/Desktop/Projects/Spring/00.todolist/todolist)
+  -  [2022-01-18 22:21:10:779][restartedMain] INFO  y.todolist.TodolistApplication - No active profile set, falling back to default profiles: default
+  -  [2022-01-18 22:21:10:780][background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+  -  [2022-01-18 22:21:10:828][restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+  -  [2022-01-18 22:21:10:829][restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+  -  [2022-01-18 22:21:11:1424][restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+  -  [2022-01-18 22:21:11:1474][restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 44 ms. Found 4 JPA repository interfaces.
+  -  [2022-01-18 22:21:11:2007][restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+  -  [2022-01-18 22:21:11:2016][restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+  -  [2022-01-18 22:21:11:2016][restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+  -  [2022-01-18 22:21:11:2017][restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.56]
+  -  [2022-01-18 22:21:11:2099][restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+  -  [2022-01-18 22:21:11:2099][restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1270 ms
+  -  [2022-01-18 22:21:11:2264][restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+  -  [2022-01-18 22:21:11:2333][restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+  -  [2022-01-18 22:21:11:2346][restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:tcp://localhost/~/todolist'
+  -  [2022-01-18 22:21:12:2390][restartedMain] INFO  y.todolist.config.filter.LogFilter - log filter init
+  -  [2022-01-18 22:21:12:2480][restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+  -  [2022-01-18 22:21:12:2528][restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.3.Final
+  -  [2022-01-18 22:21:12:2695][restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+  -  [2022-01-18 22:21:12:2814][restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+  -  [2022-01-18 22:21:13:3439][restartedMain] DEBUG org.hibernate.SQL - 
+    
+    drop table if exists category CASCADE 
+  -  [2022-01-18 22:21:13:3442][restartedMain] INFO  p6spy - #1642512073064 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/todolist
+
+    drop table if exists category CASCADE 
+
+    drop table if exists category CASCADE ;
+  -  [2022-01-18 22:21:13:3442][restartedMain] DEBUG org.hibernate.SQL - 
+    
+    drop table if exists comment CASCADE 
+  -  [2022-01-18 22:21:13:3442][restartedMain] INFO  p6spy - #1642512073064 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/todolist
+
+    drop table if exists comment CASCADE 
+
+    drop table if exists comment CASCADE ;
+  -  [2022-01-18 22:21:13:3443][restartedMain] DEBUG org.hibernate.SQL - 
+    
+    drop table if exists member CASCADE 
+  -  [2022-01-18 22:21:13:3443][restartedMain] INFO  p6spy - #1642512073065 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/todolist
+
+    drop table if exists member CASCADE 
+
+    drop table if exists member CASCADE ;
+  -  [2022-01-18 22:21:13:3443][restartedMain] DEBUG org.hibernate.SQL - 
+    
+    drop table if exists todo CASCADE 
+  -  [2022-01-18 22:21:13:3444][restartedMain] INFO  p6spy - #1642512073066 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/todolist
+
+    drop table if exists todo CASCADE 
+
+    drop table if exists todo CASCADE ;
+  -  [2022-01-18 22:21:13:3444][restartedMain] DEBUG org.hibernate.SQL - 
+    
+    drop table if exists todo_category CASCADE 
+  -  [2022-01-18 22:21:13:3444][restartedMain] INFO  p6spy - #1642512073066 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/todolist
+
+    drop table if exists todo_category CASCADE 
+
+    drop table if exists todo_category CASCADE ;
+  -  [2022-01-18 22:21:13:3444][restartedMain] DEBUG org.hibernate.SQL - 
+    
+    drop sequence if exists hibernate_sequence
+  -  [2022-01-18 22:21:13:3445][restartedMain] INFO  p6spy - #1642512073067 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/todolist
+
+    drop sequence if exists hibernate_sequence
+
+    drop sequence if exists hibernate_sequence;
+  -  [2022-01-18 22:21:13:3447][restartedMain] DEBUG org.hibernate.SQL - create sequence hibernate_sequence start with 1 increment by 1
+  -  [2022-01-18 22:21:13:3447][restartedMain] INFO  p6spy - #1642512073069 | took 0ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/todolist
+create sequence hibernate_sequence start with 1 increment by 1
+create sequence hibernate_sequence start with 1 increment by 1;
+  -  [2022-01-18 22:21:13:3448][restartedMain] DEBUG org.hibernate.SQL - 
+    
+    create table category (
+       category_id bigint not null,
+        create_date timestamp,
+        last_modified_date timestamp,
+        create_by varchar(255),
+        last_modified_by varchar(255),
+        category_name varchar(255),
+        member_id bigint,
+        primary key (category_id)
+    )
+  -  [2022-01-18 22:21:13:3448][restartedMain] INFO  p6spy - #1642512073070 | took 0ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/todolist
+
+    create table category (
+       category_id bigint not null,
+        create_date timestamp,
+        last_modified_date timestamp,
+        create_by varchar(255),
+        last_modified_by varchar(255),
+        category_name varchar(255),
+        member_id bigint,
+        primary key (category_id)
+    )
+
+    create table category (
+       category_id bigint not null,
+        create_date timestamp,
+        last_modified_date timestamp,
+        create_by varchar(255),
+        last_modified_by varchar(255),
+        category_name varchar(255),
+        member_id bigint,
+        primary key (category_id)
+    );
+  -  [2022-01-18 22:21:13:3449][restartedMain] DEBUG org.hibernate.SQL - 
+    
+    create table comment (
+       comment_id bigint not null,
+        create_date timestamp,
+        last_modified_date timestamp,
+        create_by varchar(255),
+        last_modified_by varchar(255),
+        body varchar(255),
+        member_id bigint,
+        todo_id bigint,
+        primary key (comment_id)
+    )
+  -  [2022-01-18 22:21:13:3449][restartedMain] INFO  p6spy - #1642512073071 | took 0ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/todolist
+
+    create table comment (
+       comment_id bigint not null,
+        create_date timestamp,
+        last_modified_date timestamp,
+        create_by varchar(255),
+        last_modified_by varchar(255),
+        body varchar(255),
+        member_id bigint,
+        todo_id bigint,
+        primary key (comment_id)
+    )
+
+    create table comment (
+       comment_id bigint not null,
+        create_date timestamp,
+        last_modified_date timestamp,
+        create_by varchar(255),
+        last_modified_by varchar(255),
+        body varchar(255),
+        member_id bigint,
+        todo_id bigint,
+        primary key (comment_id)
+    );
+  -  [2022-01-18 22:21:13:3449][restartedMain] DEBUG org.hibernate.SQL - 
+    
+    create table member (
+       member_id bigint not null,
+        create_date timestamp,
+        last_modified_date timestamp,
+        create_by varchar(255),
+        last_modified_by varchar(255),
+        email varchar(255),
+        name varchar(255),
+        password varchar(255),
+        sms varchar(255),
+        primary key (member_id)
+    )
+  -  [2022-01-18 22:21:13:3450][restartedMain] INFO  p6spy - #1642512073072 | took 0ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/todolist
+
+    create table member (
+       member_id bigint not null,
+        create_date timestamp,
+        last_modified_date timestamp,
+        create_by varchar(255),
+        last_modified_by varchar(255),
+        email varchar(255),
+        name varchar(255),
+        password varchar(255),
+        sms varchar(255),
+        primary key (member_id)
+    )
+
+    create table member (
+       member_id bigint not null,
+        create_date timestamp,
+        last_modified_date timestamp,
+        create_by varchar(255),
+        last_modified_by varchar(255),
+        email varchar(255),
+        name varchar(255),
+        password varchar(255),
+        sms varchar(255),
+        primary key (member_id)
+    );
+  -  [2022-01-18 22:21:13:3450][restartedMain] DEBUG org.hibernate.SQL - 
+    
+    create table todo (
+       todo_id bigint not null,
+        create_date timestamp,
+        last_modified_date timestamp,
+        create_by varchar(255),
+        last_modified_by varchar(255),
+        deadline timestamp,
+        description varchar(255),
+        notification timestamp,
+        status varchar(255),
+        title varchar(255),
+        member_id bigint,
+        primary key (todo_id)
+    )
+  -  [2022-01-18 22:21:13:3451][restartedMain] INFO  p6spy - #1642512073073 | took 0ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/todolist
+
+    create table todo (
+       todo_id bigint not null,
+        create_date timestamp,
+        last_modified_date timestamp,
+        create_by varchar(255),
+        last_modified_by varchar(255),
+        deadline timestamp,
+        description varchar(255),
+        notification timestamp,
+        status varchar(255),
+        title varchar(255),
+        member_id bigint,
+        primary key (todo_id)
+    )
+
+    create table todo (
+       todo_id bigint not null,
+        create_date timestamp,
+        last_modified_date timestamp,
+        create_by varchar(255),
+        last_modified_by varchar(255),
+        deadline timestamp,
+        description varchar(255),
+        notification timestamp,
+        status varchar(255),
+        title varchar(255),
+        member_id bigint,
+        primary key (todo_id)
+    );
+  -  [2022-01-18 22:21:13:3451][restartedMain] DEBUG org.hibernate.SQL - 
+    
+    create table todo_category (
+       todo_category_id bigint not null,
+        category_id bigint,
+        todo_id bigint,
+        primary key (todo_category_id)
+    )
+  -  [2022-01-18 22:21:13:3452][restartedMain] INFO  p6spy - #1642512073074 | took 0ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/todolist
+
+    create table todo_category (
+       todo_category_id bigint not null,
+        category_id bigint,
+        todo_id bigint,
+        primary key (todo_category_id)
+    )
+
+    create table todo_category (
+       todo_category_id bigint not null,
+        category_id bigint,
+        todo_id bigint,
+        primary key (todo_category_id)
+    );
+  -  [2022-01-18 22:21:13:3452][restartedMain] DEBUG org.hibernate.SQL - 
+    
+    alter table category 
+       add constraint FKd7qtd46ngp06lnc19g6wtoh8t 
+       foreign key (member_id) 
+       references member
+  -  [2022-01-18 22:21:13:3453][restartedMain] INFO  p6spy - #1642512073075 | took 1ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/todolist
+
+    alter table category 
+       add constraint FKd7qtd46ngp06lnc19g6wtoh8t 
+       foreign key (member_id) 
+       references member
+
+    alter table category 
+       add constraint FKd7qtd46ngp06lnc19g6wtoh8t 
+       foreign key (member_id) 
+       references member;
+  -  [2022-01-18 22:21:13:3453][restartedMain] DEBUG org.hibernate.SQL - 
+    
+    alter table comment 
+       add constraint FKmrrrpi513ssu63i2783jyiv9m 
+       foreign key (member_id) 
+       references member
+  -  [2022-01-18 22:21:13:3455][restartedMain] INFO  p6spy - #1642512073077 | took 1ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/todolist
+
+    alter table comment 
+       add constraint FKmrrrpi513ssu63i2783jyiv9m 
+       foreign key (member_id) 
+       references member
+
+    alter table comment 
+       add constraint FKmrrrpi513ssu63i2783jyiv9m 
+       foreign key (member_id) 
+       references member;
+  -  [2022-01-18 22:21:13:3455][restartedMain] DEBUG org.hibernate.SQL - 
+    
+    alter table comment 
+       add constraint FKj60kiatr37jebhtjaju6d5nv2 
+       foreign key (todo_id) 
+       references todo
+  -  [2022-01-18 22:21:13:3456][restartedMain] INFO  p6spy - #1642512073078 | took 0ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/todolist
+
+    alter table comment 
+       add constraint FKj60kiatr37jebhtjaju6d5nv2 
+       foreign key (todo_id) 
+       references todo
+
+    alter table comment 
+       add constraint FKj60kiatr37jebhtjaju6d5nv2 
+       foreign key (todo_id) 
+       references todo;
+  -  [2022-01-18 22:21:13:3456][restartedMain] DEBUG org.hibernate.SQL - 
+    
+    alter table todo 
+       add constraint FK67o67f2ave0yd2pb137aoh603 
+       foreign key (member_id) 
+       references member
+  -  [2022-01-18 22:21:13:3457][restartedMain] INFO  p6spy - #1642512073079 | took 0ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/todolist
+
+    alter table todo 
+       add constraint FK67o67f2ave0yd2pb137aoh603 
+       foreign key (member_id) 
+       references member
+
+    alter table todo 
+       add constraint FK67o67f2ave0yd2pb137aoh603 
+       foreign key (member_id) 
+       references member;
+  -  [2022-01-18 22:21:13:3457][restartedMain] DEBUG org.hibernate.SQL - 
+    
+    alter table todo_category 
+       add constraint FKcyvi5ouyhwmfqnxrpvqh4xfi3 
+       foreign key (category_id) 
+       references category
+  -  [2022-01-18 22:21:13:3458][restartedMain] INFO  p6spy - #1642512073080 | took 0ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/todolist
+
+    alter table todo_category 
+       add constraint FKcyvi5ouyhwmfqnxrpvqh4xfi3 
+       foreign key (category_id) 
+       references category
+
+    alter table todo_category 
+       add constraint FKcyvi5ouyhwmfqnxrpvqh4xfi3 
+       foreign key (category_id) 
+       references category;
+  -  [2022-01-18 22:21:13:3458][restartedMain] DEBUG org.hibernate.SQL - 
+    
+    alter table todo_category 
+       add constraint FKi3073x7gl07du43tlbwdqgaiv 
+       foreign key (todo_id) 
+       references todo
+  -  [2022-01-18 22:21:13:3459][restartedMain] INFO  p6spy - #1642512073081 | took 0ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/todolist
+
+    alter table todo_category 
+       add constraint FKi3073x7gl07du43tlbwdqgaiv 
+       foreign key (todo_id) 
+       references todo
+
+    alter table todo_category 
+       add constraint FKi3073x7gl07du43tlbwdqgaiv 
+       foreign key (todo_id) 
+       references todo;
+  -  [2022-01-18 22:21:13:3460][restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+  -  [2022-01-18 22:21:13:3467][restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+  -  [2022-01-18 22:21:13:3913][restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+  -  [2022-01-18 22:21:13:4168][restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+  -  [2022-01-18 22:21:13:4178][restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+  -  [2022-01-18 22:21:13:4193][restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+  -  [2022-01-18 22:21:13:4201][restartedMain] INFO  y.todolist.TodolistApplication - Started TodolistApplication in 3.917 seconds (JVM running for 4.355)
+  -  [2022-01-18 22:21:25:15617][http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+  -  [2022-01-18 22:21:25:15617][http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+  -  [2022-01-18 22:21:25:15618][http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+  -  [2022-01-18 22:21:25:15623][http-nio-8080-exec-1] INFO  y.todolist.config.filter.LogFilter - log filter doFilter
+  -  192.168.25.61[2022-01-18 22:21:25:15623][http-nio-8080-exec-1] INFO  y.todolist.config.filter.LogFilter - REQUEST [ff094b6e-74fb-4ffd-8808-ea943f3b2c38][/]
+  -  192.168.25.61[2022-01-18 22:21:25:15910][http-nio-8080-exec-1] INFO  y.todolist.config.filter.LogFilter - RESPONSE [ff094b6e-74fb-4ffd-8808-ea943f3b2c38][/]
+  -  192.168.25.61[2022-01-18 22:21:25:15987][http-nio-8080-exec-2] INFO  y.todolist.config.filter.LogFilter - log filter doFilter
+  -  192.168.25.61[2022-01-18 22:21:25:15987][http-nio-8080-exec-2] INFO  y.todolist.config.filter.LogFilter - REQUEST [cda47719-d810-4072-a437-6624d2528959][/css/login.css]
+  -  192.168.25.61[2022-01-18 22:21:25:16000][http-nio-8080-exec-2] INFO  y.todolist.config.filter.LogFilter - RESPONSE [cda47719-d810-4072-a437-6624d2528959][/css/login.css]
+  -  192.168.25.61[2022-01-18 22:22:00:51348][SpringApplicationShutdownHook] INFO  y.todolist.config.filter.LogFilter - log filter destroy
+  -  [2022-01-18 22:22:00:51357][SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+  -  [2022-01-18 22:22:00:51360][SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+  -  [2022-01-18 22:22:01:51411][SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+  -  

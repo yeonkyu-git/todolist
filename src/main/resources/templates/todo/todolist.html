@@ -20,6 +20,7 @@
     </style>
   </head>
   <body>
+  <a th:href="@{/logout}">로그아웃</a>
     <div class="container">
       <!-- 투두 등록하러 가기  -->
       <div class="add__todo">
@@ -44,6 +45,7 @@
         />
         <div class="field-error" th:errors="*{categoryName}"></div>
         <button type="submit">Add</button>
+        <a th:href="@{/category/list}">카테고리 목록 보기</a>
       </form>
     </div>
     <!-- todo -->

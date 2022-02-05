@@ -10,6 +10,7 @@ import yeonkyu.todolist.config.filter.LogFilter;
 import yeonkyu.todolist.config.interceptor.AddTodoInterceptor;
 import yeonkyu.todolist.config.interceptor.LogInterceptor;
 import yeonkyu.todolist.config.interceptor.LoginCheckInterceptor;
+import yeonkyu.todolist.config.interceptor.LoginCheckInterceptor2;
 import yeonkyu.todolist.service.CategoryService;
 
 import javax.servlet.Filter;
@@ -33,9 +34,13 @@ public class WebFilterConfig implements WebMvcConfigurer {
                 .addPathPatterns("/**")
                 .excludePathPatterns("/", "/sign", "/logout", "/css/**", "/*.ico", "/error");
 
+        registry.addInterceptor(new LoginCheckInterceptor2())
+                .order(3)
+                .addPathPatterns("/", "/sign")
+                .excludePathPatterns("/css/**", "/*.ico", "/error");
 
         registry.addInterceptor(new AddTodoInterceptor(categoryService))
-                .order(3)
+                .order(4)
                 .addPathPatterns("/todolist/add");
     }
 

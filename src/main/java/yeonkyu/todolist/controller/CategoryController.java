@@ -3,18 +3,20 @@ package yeonkyu.todolist.controller;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import yeonkyu.todolist.controller.dto.CategoryForm;
+import yeonkyu.todolist.controller.dto.CategoryListForm;
 import yeonkyu.todolist.controller.dto.SessionConst;
 import yeonkyu.todolist.domain.Category;
+import yeonkyu.todolist.repository.CategoryRepository;
 import yeonkyu.todolist.service.CategoryService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -23,6 +25,7 @@ import java.util.List;
 public class CategoryController {
 
     private final CategoryService categoryService;
+    private final CategoryRepository categoryRepository;
 
     /**
      * 카테고리 등록
@@ -53,10 +56,10 @@ public class CategoryController {
     }
 
     /**
-     * 카테고리 조회
+     * 카테고리 리스트 페이지
      */
     @GetMapping("/category/list")
-    public String showCategory(HttpServletRequest request) {
+    public String showCategory(Model model, HttpServletRequest request) {
 
         // 현재 로그인된 멤버 아이디 불러오기
         Long memberId = (Long) request.getAttribute("memberId");
@@ -65,8 +68,36 @@ public class CategoryController {
             return "redirect:/";
         }
 
-        List<Category> categories = categoryService.findByCategoryWithMember(memberId);
+        List<CategoryListForm> categoryFormList = new ArrayList<>();
+        categoryService.findByCategoryWithMember(memberId).stream()
+                .forEach(c -> categoryFormList.add(new CategoryListForm(c.getId(), c.getCategoryName())));
 
+        for (CategoryListForm categoryForm : categoryFormList) {
+            System.out.println("categoryForm = " + categoryForm.getCategoryName());
+        }
+
+        model.addAttribute("categoryFormList", categoryFormList);
         return "category/categoryList";
     }
+
+    /**
+     * 카테고리 수정
+     */
+    @PostMapping("/category/revise/{id}")
+    public String reviseCategory(@PathVariable("id") Long id,
+                                 @RequestParam("categoryName") String categoryName) {
+        categoryService.updateCategory(id, categoryName);
+        return "redirect:/category/list";
+    }
+
+    /**
+     * 카테고리 삭제
+     */
+    @GetMapping("/category/delete/{id}")
+    public String deleteCategory(@PathVariable("id") Long id) {
+        categoryService.deleteCategory(id);
+        return "redirect:/category/list";
+    }
 }
+
+

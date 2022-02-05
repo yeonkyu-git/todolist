@@ -44,7 +44,7 @@ public class LoginController {
             return "login/loginForm";
         }
 
-        log.info("login Member : {}", loginMember);
+        log.info("login Member : {}", loginMember.getName());
 
         HttpSession session = request.getSession();
         session.setAttribute(SessionConst.LOGIN_MEMBER, loginMember.getId());
@@ -71,8 +71,6 @@ public class LoginController {
 
         return "redirect:/";
     }
-
-
 
 
     @GetMapping("/logout")

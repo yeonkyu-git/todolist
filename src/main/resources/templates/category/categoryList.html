@@ -7,9 +7,10 @@
     <title>Document</title>
     <link
       rel="stylesheet"
-      href="../css/todo.css"
-      th:href="@{/css/todo.css}"
+      href="../css/categoryList.css"
+      th:href="@{/css/categoryList.css}"
     />
+    <script src="https://kit.fontawesome.com/4cc3138973.js" crossorigin="anonymous"></script>
     <style>
       .field-error {
         text-align: left;
@@ -21,45 +22,20 @@
   </head>
   <body>
     <div class="container">
-      <!-- 투두 등록하러 가기  -->
-      <div class="add__todo">
-        <button>
-          <a href="../todo/addTodo.html" th:href="@{/todolist/add}">할일 등록하기</a>
-        </button>
+      <div class="container__title">
+        <h1>카테고리 목록</h1>
       </div>
 
-      <!-- 카테고리 이름 -->
-      <form
-        action=""
-        class="todo__category__form"
-        method="post"
-        th:action="@{/category/add}"
-        th:object="${categoryForm}"
-      >
-        <input
-          type="text"
-          placeholder="카테고리 입력..."
-          id="name"
-          th:field="*{categoryName}"
-        />
-        <div class="field-error" th:errors="*{categoryName}"></div>
-        <button type="submit">Add</button>
-      </form>
-    </div>
-    <!-- todo -->
-    <div class="todo__container">
-      <div class="todo__container__sub">
-        <p>Check Box</p>
-        <p>Title</p>
-        <p>Description</p>
-        <p>deadline</p>
-      </div>
-      <div class="todo__container__sub">
-        <p>Check Box</p>
-        <p>Title</p>
-        <p>Description</p>
-        <p>deadline</p>
-      </div>
-    </div>
+      
+      <th:block th:each="category : ${categoryFormList}" >
+          <form method="post"  th:action="@{/category/revise/{id} (id=${category.id})}" class="category__container">
+            <input type="text" th:value="${category.categoryName}" th:name="categoryName">
+            <button type="submit"><i class="fas fa-pencil-alt"></i></button>
+            <a th:href="@{/category/delete/{id} (id=${category.id})}"><i class="fas fa-trash-alt"></i></a>
+          </form>
+      </th:block>
   </body>
 </html>
+
+<!-- th:action="@{/category/revise/{id} (id=${category.id})}" -->
+<!-- th:action="@{/category/delete/{id} (id=${category.id})}" -->

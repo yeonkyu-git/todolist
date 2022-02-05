@@ -12,7 +12,7 @@ import yeonkyu.todolist.service.TodoService;
 import javax.annotation.PostConstruct;
 import java.time.LocalDate;
 
-@Component
+//@Component
 @RequiredArgsConstructor
 public class TestDefaultInit {
 

@@ -62,7 +62,7 @@ public class LoginController {
                        BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
-            return "/login/signForm";
+            return "login/signForm";
         }
 
         Member member = new Member(signForm.getName(), signForm.getEmail(), signForm.getPassword(), signForm.getSms());

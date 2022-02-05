@@ -5,11 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="../css/todo.css"
-      th:href="@{/css/todo.css}"
-    />
+    <link rel="stylesheet" href="../css/todo.css" th:href="@{/css/todo.css}" />
     <style>
       .field-error {
         text-align: left;
@@ -18,14 +14,20 @@
         color: #dc3545;
       }
     </style>
+    <script
+      src="https://kit.fontawesome.com/4cc3138973.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-  <a th:href="@{/logout}">로그아웃</a>
+    <a th:href="@{/logout}">로그아웃</a>
     <div class="container">
       <!-- 투두 등록하러 가기  -->
       <div class="add__todo">
         <button>
-          <a href="../todo/addTodo.html" th:href="@{/todolist/add}">할일 등록하기</a>
+          <a href="../todo/addTodo.html" th:href="@{/todolist/add}"
+            >할일 등록하기</a
+          >
         </button>
       </div>
 
@@ -50,17 +52,33 @@
     </div>
     <!-- todo -->
     <div class="todo__container">
-      <div class="todo__container__sub">
-        <p>Check Box</p>
-        <p>Title</p>
-        <p>Description</p>
-        <p>deadline</p>
-      </div>
-      <div class="todo__container__sub">
-        <p>Check Box</p>
-        <p>Title</p>
-        <p>Description</p>
-        <p>deadline</p>
+      <div class="todo__container__sub" th:each="todo : ${todoFormList}">
+        <input
+          th:if="${todo.status.toString().equals('DOING')}"
+          type="checkbox"
+        />
+        <input
+          th:if="${todo.status.toString().equals('COMPLETE')}"
+          type="checkbox"
+          checked
+        />
+
+        <div
+          class="todo_container_category"
+          th:each="name : ${todo.categoryName}"
+        >
+          <p th:text="${name}"></p>
+        </div>
+        <p th:text="${todo.title}">Title</p>
+        <p th:text="${todo.description}">Description</p>
+        <p th:text="${todo.deadline}">deadline</p>
+
+        <a th:href="@{/todo/revise/{id} (id=${todo.id})}">
+          <i class="fas fa-pencil-alt"> </i>
+        </a>
+        <a th:href="@{/todo/delete/{id} (id=${todo.id})}">
+          <i class="fas fa-trash-alt"> </i>
+        </a>
       </div>
     </div>
   </body>

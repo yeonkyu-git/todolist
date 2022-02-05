@@ -41,7 +41,7 @@ public class WebFilterConfig implements WebMvcConfigurer {
 
         registry.addInterceptor(new AddTodoInterceptor(categoryService))
                 .order(4)
-                .addPathPatterns("/todolist/add");
+                .addPathPatterns("/todolist/add", "/todo/revise/**");
     }
 
 

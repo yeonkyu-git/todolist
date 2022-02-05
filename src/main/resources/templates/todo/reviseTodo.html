@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      th:href="@{/css/todoaddForm.css}"
+      href="../css/todoaddForm.css"
+    />
+    <style>
+      .field-error {
+        text-align: left;
+        font-size: 14px;
+        border-color: #dc3545;
+        color: #dc3545;
+      }
+    </style>
+  </head>
+  <body>
+    <a th:href="@{/logout}">로그아웃</a>
+    <div class="todo-page">
+      <div class="form">
+        <form class="todo-form" method="post" th:action th:object="${todoForm}">
+          <div th:if="${#fields.hasGlobalErrors()}">
+            <p
+              class="field-error"
+              th:each="err : ${#fields.globalErrors()}"
+              th:text="${err}"
+            >
+              전체 오류 메시지
+            </p>
+          </div>
+
+          <div class="category__date">
+            <select
+              name="choice"
+              th:field="*{categoryId}"
+              id="categoryId"
+              th:errorclass="field-error"
+            >
+              <option
+                th:each="category : ${categoryNames}"
+                th:value="${category.id}"
+                th:text="${category.categoryName}"
+                th:errorclass="field-error"
+                th:selected="${category.id} == *{categoryId}"
+              ></option>
+            </select>
+            <span></span>
+            <input type="date" th:field="*{deadline}" id="deadline" />
+            <input type="date" th:field="*{notification}" id="notification" />
+          </div>
+          <div class="field-error" th:errors="*{categoryId}"></div>
+          <div class="field-error" th:errors="*{deadline}"></div>
+          <div class="field-error" th:errors="*{notification}"></div>
+
+          <input
+            type="text"
+            placeholder="Input Todo..."
+            id="title"
+            th:field="*{title}"
+            th:errorclass="field-error"
+          />
+          <div class="field-error" th:errors="*{title}"></div>
+          <textarea
+            type="text"
+            placeholder="Input description..."
+            id="description"
+            th:field="*{description}"
+            th:errorclass="field-error"
+          ></textarea>
+          <div class="field-error" th:errors="*{description}"></div>
+          <button type="submit">할일 수정</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

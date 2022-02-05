@@ -88,4 +88,12 @@ body {
 .todo__container__sub {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  align-self: center;
+}
+
+.todo_container_category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
